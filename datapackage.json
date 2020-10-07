@@ -1,0 +1,670 @@
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "author": "Gerald Groot Roessink",
+  "bytes": 23751228,
+  "count_of_rows": 251557,
+  "countryCode": "NL",
+  "description": "Balansen van het onderwijs in Nederland 2012-1016",
+  "hash": "ae2c2fef12ec0b79b03d8d6f99f4f172",
+  "model": {
+    "dimensions": {
+      "administrative-classification": {
+        "attributes": {
+          "bevoegd_gezag": {
+            "source": "bevoegd_gezag",
+            "title": "Bevoegd Gezag"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "bevoegd_gezag"
+        ]
+      },
+      "date": {
+        "attributes": {
+          "jaar": {
+            "source": "jaar",
+            "title": "Jaar"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": [
+          "jaar"
+        ]
+      },
+      "economic-classification": {
+        "attributes": {
+          "balanspost_level_1": {
+            "source": "balanspost_level_1",
+            "title": "Balanspost-level 1"
+          },
+          "balanspost_level_2": {
+            "parent": "balanspost_level_1",
+            "source": "balanspost_level_2",
+            "title": "Balanspost-level 2"
+          },
+          "balanspost_level_3": {
+            "parent": "balanspost_level_2",
+            "source": "balanspost_level_3",
+            "title": "Balanspost-level 3"
+          }
+        },
+        "classificationType": "economic",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      },
+      "functional-classification": {
+        "attributes": {
+          "sector": {
+            "source": "sector",
+            "title": "Sector"
+          }
+        },
+        "classificationType": "functional",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "sector"
+        ]
+      }
+    },
+    "measures": {
+      "balanswaarde": {
+        "source": "balanswaarde",
+        "title": "Balanswaarde"
+      }
+    }
+  },
+  "name": "balansen_onderwijs_nl_v0_4_9",
+  "owner": "ed6eb7eb49eb2620da97599cfeae0456",
+  "profile": "data-package",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "promise": {},
+  "regionCode": "eu",
+  "resources": [
+    {
+      "bytes": 17813103,
+      "count_of_rows": 150930,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "50abb17d3eae61e6f2dcaa0ed5c28a54",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal",
+      "path": "data/01-balans-2012-2016newnormaal.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    },
+    {
+      "bytes": 7081803,
+      "count_of_rows": 59996,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal__2012.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "9fd34f2a33ebbe4d515469ae2ebeac2d",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal__2012",
+      "path": "data/01-balans-2012-2016newnormaal__2012.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    },
+    {
+      "bytes": 7073568,
+      "count_of_rows": 59930,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal__2013.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "873be4aa9db72b8f65dedb2447284cce",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal__2013",
+      "path": "data/01-balans-2012-2016newnormaal__2013.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    },
+    {
+      "bytes": 7133018,
+      "count_of_rows": 60440,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal__2014.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "6bdf18bf8d12a28dfc261598eb535d04",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal__2014",
+      "path": "data/01-balans-2012-2016newnormaal__2014.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    },
+    {
+      "bytes": 7166021,
+      "count_of_rows": 60722,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal__2015.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "2748bc46bc9ba277e442bc2e5e991bae",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal__2015",
+      "path": "data/01-balans-2012-2016newnormaal__2015.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    },
+    {
+      "bytes": 7172184,
+      "count_of_rows": 60772,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streamedFrom": "/tmp/tmp479uwr4q/final/data/01-balans-2012-2016newnormaal__2016.csv",
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "1efb1c6a589cb31be45c3cb5e8c094e8",
+      "mediatype": "text/csv",
+      "name": "01-balans-2012-2016newnormaal__2016",
+      "path": "data/01-balans-2012-2016newnormaal__2016.csv",
+      "profile": "data-resource",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "bevoegd_gezag",
+            "osType": "administrative-classification:generic:code",
+            "slug": "bevoegd_gezag",
+            "title": "Bevoegd Gezag",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "sector",
+            "osType": "functional-classification:generic:code",
+            "slug": "sector",
+            "title": "Sector",
+            "type": "string"
+          },
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "jaar",
+            "osType": "date:fiscal-year",
+            "slug": "jaar",
+            "title": "Jaar",
+            "type": "integer"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "balanspost_level_1",
+            "title": "Balanspost-level 1",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "balanspost_level_2",
+            "title": "Balanspost-level 2",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "balanspost_level_3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "balanspost_level_3",
+            "title": "Balanspost-level 3",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "balanswaarde",
+            "osType": "value",
+            "slug": "balanswaarde",
+            "title": "Balanswaarde",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "bevoegd_gezag",
+          "sector",
+          "jaar",
+          "balanspost_level_1",
+          "balanspost_level_2",
+          "balanspost_level_3"
+        ]
+      }
+    }
+  ],
+  "title": "balansen onderwijs 2012-2016 NL v4.9"
+}
