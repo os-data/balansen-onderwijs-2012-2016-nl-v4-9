@@ -105,7 +105,7 @@
       "hash": "50abb17d3eae61e6f2dcaa0ed5c28a54",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal",
-      "path": "data/01-balans-2012-2016newnormaal.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -201,7 +201,7 @@
       "hash": "9fd34f2a33ebbe4d515469ae2ebeac2d",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal__2012",
-      "path": "data/01-balans-2012-2016newnormaal__2012.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal__2012.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -297,7 +297,7 @@
       "hash": "873be4aa9db72b8f65dedb2447284cce",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal__2013",
-      "path": "data/01-balans-2012-2016newnormaal__2013.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal__2013.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -393,7 +393,7 @@
       "hash": "6bdf18bf8d12a28dfc261598eb535d04",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal__2014",
-      "path": "data/01-balans-2012-2016newnormaal__2014.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal__2014.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -489,7 +489,7 @@
       "hash": "2748bc46bc9ba277e442bc2e5e991bae",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal__2015",
-      "path": "data/01-balans-2012-2016newnormaal__2015.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal__2015.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
@@ -585,7 +585,7 @@
       "hash": "1efb1c6a589cb31be45c3cb5e8c094e8",
       "mediatype": "text/csv",
       "name": "01-balans-2012-2016newnormaal__2016",
-      "path": "data/01-balans-2012-2016newnormaal__2016.csv",
+      "path": "https://storage.openspending.org/01-balans-2012-2016newnormaal__2016.csv",
       "profile": "data-resource",
       "schema": {
         "fields": [
