@@ -4,6 +4,10 @@
   "bytes": 23751228,
   "count_of_rows": 251557,
   "countryCode": "NL",
+  "fiscalPeriod": {
+    "start": "2012-01-01",
+    "stop": "2016-12-31"
+  },
   "description": "Balansen van het onderwijs in Nederland 2012-1016",
   "hash": "ae2c2fef12ec0b79b03d8d6f99f4f172",
   "model": {
